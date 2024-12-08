@@ -1,0 +1,29 @@
+.dot-art {
+  position: relative;
+  display: block;
+  /* ブロック要素として表示 */
+  z-index: 1;
+  /* 背景の上に表示するためにz-indexを設定 */
+  margin: 20px 0;
+  /* 各セクションの間にスペースを追加 */
+}
+
+.dot-art img {
+  display: block;
+  /* ブロック要素として表示 */
+  width: 700px;
+  height: 700px;
+  border: 2px solid #333;
+  /* これはオプションです */
+}
+
+.dot-art .animated {
+  display: none;
+}
+
+img {
+  width: 700px;
+  height: 700px;
+  border: 2px solid #333;
+  /* これはオプションです */
+}
