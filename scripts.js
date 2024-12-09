@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const staticImage = dotArt.querySelector('.static');
       const animatedImage = dotArt.querySelector('.animated');
 
-      dotArt.addEventListener('mouseover', function () {
+      staticImage.addEventListener('mouseover', function () {
           staticImage.style.display = 'none';
           animatedImage.style.display = 'block';
       });
 
-      dotArt.addEventListener('mouseout', function () {
+      animatedImage.addEventListener('mouseout', function () {
           staticImage.style.display = 'block';
           animatedImage.style.display = 'none';
           
