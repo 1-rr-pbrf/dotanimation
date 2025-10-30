@@ -26,4 +26,27 @@ img {
   height: 700px;
   border: 2px solid #333;
   /* これはオプションです */
+
+}
+.link-area {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.link-area a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #87ceeb;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 0px #333;
+  transition: 0.2s;
+}
+
+.link-area a:hover {
+  background-color: #5ab0e3;
+  transform: translateY(-2px);
 }
