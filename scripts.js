@@ -1,36 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const dotArts = document.querySelectorAll('.dot-art');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.image-box img').forEach(img => {
+    const pngSrc = img.src;
+    const gifSrc = img.dataset.gif;
 
-  dotArts.forEach(function(dotArt) {
-      const staticImage = dotArt.querySelector('.static');
-      const animatedImage = dotArt.querySelector('.animated');
+    img.addEventListener('mouseenter', () => {
+      img.src = gifSrc;
+    });
 
-      staticImage.addEventListener('mouseover', function () {
-          staticImage.style.display = 'none';
-          animatedImage.style.display = 'block';
-      });
-
-      animatedImage.addEventListener('mouseout', function () {
-          staticImage.style.display = 'block';
-          animatedImage.style.display = 'none';
-          document.querySelectorAll('.image-box img').forEach(img => {
-  const pngSrc = img.src;
-  const gifSrc = img.dataset.gif;
-
-  img.addEventListener('mouseenter', () => {
-    img.src = gifSrc;
-  });
-
-  img.addEventListener('mouseleave', () => {
-    img.src = pngSrc;
+    img.addEventListener('mouseleave', () => {
+      img.src = pngSrc;
+    });
   });
 });
-
-          // GIFのループを最初から再生するためにソースをリセット
-          const src = animatedImage.src;
-          animatedImage.src = '';
-          animatedImage.src = src;
-      });
-  });
-});
-
