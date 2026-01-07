@@ -9,12 +9,9 @@
 }
 
 .dot-art img {
-  display: block;
-  /* ブロック要素として表示 */
   width: 700px;
-  height: 700px;
-  border: 2px solid #333;
-  /* これはオプションです */
+  height: auto;
+  image-rendering: pixelated;
 }
 
 .dot-art .animated {
@@ -52,4 +49,5 @@ image-rendering: pixelated;
   background-color: #5ab0e3;
   transform: translateY(-2px);
 }
+
 
