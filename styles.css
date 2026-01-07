@@ -11,18 +11,6 @@ body {
   color: #333;
 }
 
-/* ===== 上部リンク ===== */
-.top-link {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.top-link a {
-  text-decoration: none;
-  font-size: 18px;
-  color: #007bff;
-}
-
 /* ===== 見出し ===== */
 h1 {
   font-size: 1.2rem;
@@ -54,17 +42,6 @@ h1 {
   height: 128px;
 }
 
-/* ===== ドット構成（疑似要素） ===== */
-.penguin.small::before,
-.penguin.large::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  animation: limbs 0.8s infinite;
-}
-
 /* ===== アニメーション ===== */
 @keyframes walk {
   0%   { transform: translateX(0); }
@@ -76,26 +53,30 @@ h1 {
 
 /* ===== ドット絵比較エリア ===== */
 .dot-art {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
   text-align: center;
   margin: 20px 0;
 }
 
-/* ★ ここが重要：縦横比を壊さない設定 ★ */
+/* ★ レスポンシブ表示（重要） */
 .dot-art img {
-  width: 300px;              /* 比較しやすい表示サイズ */
-  height: auto;              /* 縦横比を必ず保持 */
-  image-rendering: pixelated;/* ドットをくっきり表示 */
+  width: min(80vw, 500px);   /* 画面に応じて可変 */
+  height: auto;              /* 縦横比保持 */
+  image-rendering: pixelated;
   border: 2px solid #333;
   margin: 5px;
   display: block;
 }
 
-/* ===== GIF切り替え用（将来用） ===== */
+/* ===== GIF切り替え用 ===== */
 .dot-art .animated {
   display: none;
 }
 
-/* ===== リンクエリア ===== */
+/* ===== リンクエリア（将来用） ===== */
 .link-area {
   margin-top: 40px;
   text-align: center;
