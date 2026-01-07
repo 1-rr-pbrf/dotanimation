@@ -3,180 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ペンギン歩行アニメーション比較</title>
+  <title>ドット絵アニメーション比較</title>
+
+  <!-- 外部CSS -->
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 40px;
-      background: linear-gradient(#87ceeb 70%, #d0f0c0 70%);
-      font-family: sans-serif;
-    }
-
-    /* 上部リンク */
-    .top-link {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .top-link a {
-      text-decoration: none;
-      font-size: 18px;
-      color: #007bff;
-    }
-
-    h1 {
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    .container {
-      display: flex;
-      gap: 80px;
-      align-items: flex-end;
-    }
-
-    .penguin {
-      position: relative;
-      animation: walk 0.8s steps(2) infinite;
-    }
-
-    /* 16×16ペンギン */
-    .penguin.small {
-      width: 64px;
-      height: 64px;
-      background: none;
-    }
-
-    .penguin.small::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image:
-        linear-gradient(#000, #000),  /* 頭 */
-        linear-gradient(#fff, #fff),  /* 顔 */
-        linear-gradient(#ffcc00, #ffcc00), /* くちばし */
-        linear-gradient(#000, #000),  /* 体 */
-        linear-gradient(#000, #000),  /* 翼左 */
-        linear-gradient(#000, #000),  /* 翼右 */
-        linear-gradient(#ffa500, #ffa500), /* 左足 */
-        linear-gradient(#ffa500, #ffa500); /* 右足 */
-      background-size: 8px 8px;
-      background-repeat: no-repeat;
-      background-position:
-        24px 0px,   /* 頭 */
-        24px 8px,   /* 顔 */
-        32px 8px,   /* くちばし */
-        24px 16px,  /* 体 */
-        16px 16px,  /* 翼左 */
-        40px 16px,  /* 翼右 */
-        24px 32px,  /* 左足 */
-        32px 32px;  /* 右足 */
-    }
-
-    /* 32×32ペンギン */
-    .penguin.large {
-      width: 128px;
-      height: 128px;
-    }
-
-    .penguin.large::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image:
-        linear-gradient(#000, #000),
-        linear-gradient(#fff, #fff),
-        linear-gradient(#ffcc00, #ffcc00),
-        linear-gradient(#000, #000),
-        linear-gradient(#000, #000),
-        linear-gradient(#000, #000),
-        linear-gradient(#ffa500, #ffa500),
-        linear-gradient(#ffa500, #ffa500);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position:
-        48px 0px,
-        48px 16px,
-        64px 16px,
-        48px 32px,
-        32px 32px,
-        80px 32px,
-        48px 64px,
-        64px 64px;
-    }
-
-    /* アニメーション共通 */
-    @keyframes walk {
-      0% { transform: translateX(0); }
-      25% { transform: translateY(1px); filter: brightness(1); }
-      50% { transform: translateX(6px); filter: brightness(0.95); }
-      75% { transform: translateY(-1px); filter: brightness(1); }
-      100% { transform: translateX(12px); }
-    }
-
-    /* 手足の動きを交互に表現 */
-    .penguin.small::before,
-    .penguin.large::before {
-      animation: limbs 0.8s infinite;
-    }
-
-    @keyframes limbs {
-      0%, 100% {
-        background-position:
-          24px 0px, 24px 8px, 32px 8px, 24px 16px,
-          16px 16px, 40px 16px, 24px 32px, 32px 32px;
-      }
-      50% {
-        background-position:
-          24px 0px, 24px 8px, 32px 8px, 24px 16px,
-          18px 14px, 38px 18px, 26px 34px, 30px 30px;
-      }
-    }
-
-    /* 画像比較エリア */
-    .dot-art {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .dot-art img {
-      width: 160px;
-      margin: 5px;
-    }
-  </style>
 </head>
+
 <body>
 
+  <h1>16×16 と 32×32 におけるドット絵アニメーション表現の比較</h1>
 
-
-  <h1>16×16 と 32×32 のドットペンギン歩行アニメーション比較</h1>
-
+  <!-- ペンギン歩行アニメーション -->
   <div class="container">
     <div class="penguin small"></div>
     <div class="penguin large"></div>
   </div>
 
-  <div class="dot-art">
+  <!-- 比較①：変換前 -->
+  <section class="dot-art">
     <p>変換前</p>
-    <img src="images/イラスト210.png" alt="静止画1">
-    <img src="images/イラスト210.gif" alt="アニメーション1">
-  </div>
+    <img src="images/イラスト210.png" alt="変換前 静止画">
+    <img src="images/イラスト210.gif" alt="変換前 アニメーション">
+  </section>
 
-  <div class="dot-art">
+  <!-- 比較②：変換・修正後 -->
+  <section class="dot-art">
     <p>変換・修正後</p>
-    <img src="images/イラスト210-1.png" alt="静止画2">
-    <img src="images/イラスト210-export.gif" alt="アニメーション2">
-  </div>
-
-  <script src="scripts.js"></script>
+    <img src="images/イラスト210-1.png" alt="変換後 静止画">
+    <img src="images/イラスト210-export.gif" alt="変換後 アニメーション">
+  </section>
 
 </body>
 </html>
