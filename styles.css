@@ -69,10 +69,7 @@ h1 {
   border: 2px solid #333;
 }
 
-/* ===== GIF切り替え用 ===== */
-.dot-art .animated {
-  display: none;
-}
+
 
 /* ===== リンクエリア（将来用） ===== */
 .link-area {
@@ -97,4 +94,5 @@ h1 {
   background-color: #5ab0e3;
   transform: translateY(-2px);
 }
+
 
