@@ -95,4 +95,104 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* =========================
+   ペンギン歩行アニメーション
+========================= */
+
+h2 {
+  margin-top: 80px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* ペンギン表示エリア */
+.penguin-area {
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 40px;
+}
+
+/* ペンギン共通 */
+.penguin {
+  position: relative;
+  animation: walk 0.8s steps(2) infinite;
+}
+
+/* 16×16 相当 */
+.penguin.small {
+  width: 64px;
+  height: 64px;
+}
+
+.penguin.small::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#000, #000),
+    linear-gradient(#fff, #fff),
+    linear-gradient(#ffcc00, #ffcc00),
+    linear-gradient(#000, #000),
+    linear-gradient(#000, #000),
+    linear-gradient(#000, #000),
+    linear-gradient(#ffa500, #ffa500),
+    linear-gradient(#ffa500, #ffa500);
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  background-position:
+    24px 0px,
+    24px 8px,
+    32px 8px,
+    24px 16px,
+    16px 16px,
+    40px 16px,
+    24px 32px,
+    32px 32px;
+  image-rendering: pixelated;
+}
+
+/* 32×32 相当 */
+.penguin.large {
+  width: 128px;
+  height: 128px;
+}
+
+.penguin.large::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#000, #000),
+    linear-gradient(#fff, #fff),
+    linear-gradient(#ffcc00, #ffcc00),
+    linear-gradient(#000, #000),
+    linear-gradient(#000, #000),
+    linear-gradient(#000, #000),
+    linear-gradient(#ffa500, #ffa500),
+    linear-gradient(#ffa500, #ffa500);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position:
+    48px 0px,
+    48px 16px,
+    64px 16px,
+    48px 32px,
+    32px 32px,
+    80px 32px,
+    48px 64px,
+    64px 64px;
+  image-rendering: pixelated;
+}
+
+/* 歩行アニメーション */
+@keyframes walk {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateY(1px); }
+  50%  { transform: translateX(6px); }
+  75%  { transform: translateY(-1px); }
+  100% { transform: translateX(12px); }
+}
+
 
