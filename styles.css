@@ -51,24 +51,22 @@ h1 {
   100% { transform: translateX(12px); }
 }
 
-/* ===== ドット絵比較エリア ===== */
-.dot-art {
+.compare {
   display: flex;
+  gap: 60px;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  text-align: center;
-  margin: 20px 0;
+  margin-top: 40px;
 }
 
-/* ★ レスポンシブ表示（重要） */
-.dot-art img {
-  width: min(80vw, 500px);   /* 画面に応じて可変 */
-  height: auto;              /* 縦横比保持 */
+.image-box {
+  text-align: center;
+}
+
+.image-box img {
+  width: min(40vw, 500px); /* 画面に合わせて拡大 */
+  aspect-ratio: 1 / 1;    /* 正方形を維持 */
   image-rendering: pixelated;
   border: 2px solid #333;
-  margin: 5px;
-  display: block;
 }
 
 /* ===== GIF切り替え用 ===== */
@@ -99,3 +97,4 @@ h1 {
   background-color: #5ab0e3;
   transform: translateY(-2px);
 }
+
