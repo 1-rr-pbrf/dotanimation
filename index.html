@@ -11,37 +11,45 @@
 
 <body>
 
-  <h1>ドット絵アニメーション表現の比較</h1>
+  <h1>16×16 と 32×32 におけるドット絵アニメーション表現の比較</h1>
 
+  <!-- =========================
+       コードによる歩行アニメーション
+  ========================= -->
+  <h2>サイズ差による歩行アニメーションの比較（コード制御）</h2>
+
+  <div class="penguin-area">
+    <div class="penguin small"></div>
+    <div class="penguin large"></div>
+  </div>
+
+  <!-- =========================
+       画像比較（PNG → hoverでGIF）
+  ========================= -->
+  <h2>静止画とアニメーションの比較</h2>
 
   <div class="compare">
-  <!-- 変換前 -->
-  <div class="image-box">
-    <p>変換前</p>
-    <img
-      src="images/イラスト210.png"
-      data-gif="images/イラスト210.gif"
-      alt="変換前">
+    <!-- 変換前 -->
+    <div class="image-box">
+      <p>変換前</p>
+      <img
+        src="images/イラスト210.png"
+        data-gif="images/イラスト210.gif"
+        alt="変換前 ドット絵">
+    </div>
+
+    <!-- 変換後 -->
+    <div class="image-box">
+      <p>変換後</p>
+      <img
+        src="images/イラスト210-1.png"
+        data-gif="images/イラスト210-export.gif"
+        alt="変換後 ドット絵">
+    </div>
   </div>
 
-  <!-- 変換後 -->
-  <div class="image-box">
-    <p>変換後</p>
-    <img
-      src="images/イラスト210-1.png"
-      data-gif="images/イラスト210-export.gif"
-      alt="変換後">
-  </div>
-    <h2>歩行アニメーションの比較</h2>
-
-<div class="penguin-area">
-  <div class="penguin small"></div>
-  <div class="penguin large"></div>
-</div>
-
-</div>
-
-<script src="scripts.js"></script>
+  <!-- 外部JavaScript -->
+  <script src="scripts.js"></script>
 
 </body>
 </html>
